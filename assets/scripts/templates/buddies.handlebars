@@ -1,0 +1,12 @@
+{{#each patients as |patient|}}
+  {{log patient}}
+
+  <div>
+    <section data-id="{{patient.id}}" class="buddies">
+    <h4 id="patient-name"><small>{{patient.first_name}}, aka {{patient.screen_name}}</small></h4>
+    {{!-- <h5 id ="patient-screen_name"><small></small></h5>  --}}
+    <h6 id="sex">{{patient.sex}} , {{patient.wing}}, {{patient.born_on}}</h6>
+    <button type="submit" id="invite">Invite to Play</button>
+    </section>
+  </div>
+{{/each}}

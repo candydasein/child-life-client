@@ -1,1 +1,121 @@
 @import '~bootstrap/scss/bootstrap';
+
+$main-background-color: #4b5a68;
+$secondary-background: #f42727;
+$font-color: #fcfcfc;
+
+body {
+    background-color: $main-background-color;
+    color: $font-color;
+    background-image: url('https://i.postimg.cc/gJQMVCcJ/Cartoon-landscape-vector-background14.jpg');
+    background-size: cover;
+   // zoom: 1.5; 
+  }
+  
+  div {
+   // border: $font-color 2px solid;
+    padding: 10px;
+    text-align: center;
+  }
+
+ 
+  
+//   button {
+//     background-color: $secondary-background;
+//     color: $font-color;
+//   }
+
+  #getSpecialist {
+    background-color:  #f42727;
+    color: $font-color;
+    text-shadow:
+		-0.2px -0.2px 0 #000,
+		0.2px -0.2px 0 #000,
+		-0.2px 0.2px 0 #000,
+		0.2px 0.2px 0 #000;
+  }
+
+  #getResources {
+    background-color:  #f49127;
+    color: $font-color;
+    text-shadow:
+    -0.2px -0.2px 0 #000,
+    0.2px -0.2px 0 #000,
+    -0.2px 0.2px 0 #000,
+    0.2px 0.2px 0 #000;
+  }
+
+  #getStory {
+    background-color:  #eee600;
+    color: $font-color;
+    text-shadow:
+    -0.2px -0.2px 0 #000,
+    0.2px -0.2px 0 #000,
+    -0.2px 0.2px 0 #000,
+    0.2px 0.2px 0 #000;
+  }
+
+  #getBuddies {
+    background-color:  #2dc220;
+    color: $font-color;
+    text-shadow:
+    -0.2px -0.2px 0 #000,
+    0.2px -0.2px 0 #000,
+    -0.2px 0.2px 0 #000,
+    0.2px 0.2px 0 #000;
+  }
+
+  #getOnlineBuddies {
+    background-color:  #2772f4;
+    color: $font-color;
+    text-shadow:
+    -0.2px -0.2px 0 #000,
+    0.2px -0.2px 0 #000,
+    -0.2px 0.2px 0 #000,
+    0.2px 0.2px 0 #000;
+  }
+
+  #welcome {
+      color: rgb(255, 255, 255); 
+      text-align: center;
+      background-color: rgba(97, 83, 83, 0.345);
+    //   text-shadow:
+		// -1px -1px 0 rgb(165, 161, 161),
+		// 1px -1px 0 rgb(165, 161, 161),
+		// -1px 1px 0 rgb(165, 161, 161),
+		// 1px 1px 0 rgb(165, 161, 161);
+      }
+
+nav {
+    text-align: center;
+    font-stretch: extra-expanded;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.345);
+}
+
+#patient-name {
+ 
+}
+
+#patient-screen_name {
+
+}
+
+.buddies {
+  display: inline-block;
+  border: rgb(255, 255, 255) 2px solid;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#invite {
+  font-size: 12px;
+}
