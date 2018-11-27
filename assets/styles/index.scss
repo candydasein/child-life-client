@@ -18,7 +18,16 @@ body {
     text-align: center;
   }
 
- 
+ #login-button {
+   color: white;
+   font-size: 24px;
+   background-color: black;
+
+ }
+
+ #login-button-div {
+
+ }
   
 //   button {
 //     background-color: $secondary-background;
@@ -28,51 +37,51 @@ body {
   #getSpecialist {
     background-color:  #f42727;
     color: $font-color;
-    text-shadow:
-		-0.2px -0.2px 0 #000,
-		0.2px -0.2px 0 #000,
-		-0.2px 0.2px 0 #000,
-		0.2px 0.2px 0 #000;
+    // text-shadow:
+		// -0.2px -0.2px 0 #000,
+		// 0.2px -0.2px 0 #000,
+		// -0.2px 0.2px 0 #000,
+		// 0.2px 0.2px 0 #000;
   }
 
   #getResources {
     background-color:  #f49127;
     color: $font-color;
-    text-shadow:
-    -0.2px -0.2px 0 #000,
-    0.2px -0.2px 0 #000,
-    -0.2px 0.2px 0 #000,
-    0.2px 0.2px 0 #000;
+    // text-shadow:
+    // -0.2px -0.2px 0 #000,
+    // 0.2px -0.2px 0 #000,
+    // -0.2px 0.2px 0 #000,
+    // 0.2px 0.2px 0 #000;
   }
 
   #getStory {
-    background-color:  #eee600;
+    background-color: gold;
     color: $font-color;
-    text-shadow:
-    -0.2px -0.2px 0 #000,
-    0.2px -0.2px 0 #000,
-    -0.2px 0.2px 0 #000,
-    0.2px 0.2px 0 #000;
+    // text-shadow:
+    // -0.2px -0.2px 0 #000,
+    // 0.2px -0.2px 0 #000,
+    // -0.2px 0.2px 0 #000,
+    // 0.2px 0.2px 0 #000;
   }
 
   #getBuddies {
     background-color:  #2dc220;
     color: $font-color;
-    text-shadow:
-    -0.2px -0.2px 0 #000,
-    0.2px -0.2px 0 #000,
-    -0.2px 0.2px 0 #000,
-    0.2px 0.2px 0 #000;
+    // text-shadow:
+    // -0.2px -0.2px 0 #000,
+    // 0.2px -0.2px 0 #000,
+    // -0.2px 0.2px 0 #000,
+    // 0.2px 0.2px 0 #000;
   }
 
   #getOnlineBuddies {
     background-color:  #2772f4;
     color: $font-color;
-    text-shadow:
-    -0.2px -0.2px 0 #000,
-    0.2px -0.2px 0 #000,
-    -0.2px 0.2px 0 #000,
-    0.2px 0.2px 0 #000;
+    // text-shadow:
+    // -0.2px -0.2px 0 #000,
+    // 0.2px -0.2px 0 #000,
+    // -0.2px 0.2px 0 #000,
+    // 0.2px 0.2px 0 #000;
   }
 
   #welcome {
@@ -89,6 +98,7 @@ body {
 nav {
     text-align: center;
     font-stretch: extra-expanded;
+    position: relative;
 }
 
 button:hover {
@@ -96,26 +106,47 @@ button:hover {
 }
 
 #results {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: rgba(0, 0, 0, 0.345);
+  // display: flex;
+  // flex-wrap: wrap;
+  background-color: rgba(61, 61, 67, 0.406);
 }
 
 #patient-name {
- 
+  color: red;
 }
 
 #patient-screen_name {
-
+  color: blue;
 }
 
 .buddies {
-  display: inline-block;
+  // display: inline-block;
   border: rgb(255, 255, 255) 2px solid;
   color: #ffffff;
   font-weight: bold;
+  position: relative;
+  // box-sizing: content-box;
 }
 
 #invite {
   font-size: 12px;
+}
+
+.attributes {
+  display: flex;
+}
+
+.buddies td {
+  border: 1px solid rgb(43, 4, 4); 
+}
+
+.loginmodal-container {
+  background-color: #ffffffa1;
+  color: black;
+}
+
+#sign-out_change-pw {
+  bottom: 10px;
+  position: relative;
+  align-content: center;
 }

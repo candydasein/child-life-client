@@ -13,8 +13,51 @@
     </head>    
       <body class="container-fluid">
        <br>
-              <h1 id="welcome">Welcome to Child Life</h1>
-        <nav>
+       <h1 id="welcome" class="jumbotron">Welcome to Child Life</h1>
+       
+       <!-- <div id="login-button-div">
+       <a href="#" data-toggle="modal" data-target="#login-modal" id="login-button">Login</a>
+      </div>
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form>
+					<input type="text" name="credentials[email]" placeholder="Email">
+					<input type="password" name="credentials[password]" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+					
+				  <div class="login-help">
+					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+      </div> -->
+      <div id="forms">
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign Up</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" value="Sign Up">
+            </fieldset>
+          </form>
+          <br>
+          <form id="sign-in">
+            <fieldset>
+              <legend>Sign In</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" value="Sign In">
+            </fieldset>
+          </form>
+          <div id="message" hidden>
+              
+            </div>
+             
+        <nav id="nav-bar" hidden>
           <button id="getSpecialist" class="btn btn-block">My Specialist</button>
           <button id="getResources" class="btn btn-block">Resources</button>
           <button id="getStory" class="btn btn-block">My Hospital Story</button>
@@ -22,9 +65,25 @@
           <button id="getOnlineBuddies" class="btn btn-block">Who's Online</button>
         </nav>
         <main>
-          <div id="results" class="results"></div>
+          <div id="results" class="results" hidden></div>
         </main>
-
+        
+        <div id="sign-out_change-pw">
+        <form id="change-password" hidden>
+            <fieldset>
+              <legend></legend>
+              <input type="password" name="passwords[old]" placeholder="Old Password">
+              <input type="password" name="passwords[new]" placeholder="New Password">
+              <input type="submit" value="Change Password">
+            </fieldset>
+          </form> 
+          <form id="sign-out" hidden>
+            <fieldset>
+              <!-- <legend>Sign Out</legend> -->
+              <input type="submit" value="Sign Out">
+            </fieldset>
+          </form> 
+        </div>
       </body>
     </body>
 </html>
