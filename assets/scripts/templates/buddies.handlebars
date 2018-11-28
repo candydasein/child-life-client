@@ -9,17 +9,17 @@
         return age;
     } --}}
 
-{{#each patients as |patient|}}
-  {{log patient}}
+{{#each users as |user|}}
+  {{log user}}
 
   <div>
-    <section data-id="{{patient.id}}" class="buddies">
+    <section data-id="{{user.id}}" class="buddies">
    
-    {{!-- <h5 id ="patient-screen_name"><small></small></h5>  --}}
-    <tr><td id="patient-name">{{patient.first_name}},</td> 
-         <td id="patient-screen_name">aka {{patient.screen_name}},</td>
-         <td>Age: {{age patient.born_on}}</td>
-         <td class="avatar"><img style="object-fit:cover;height:80px;" src="{{patient.avatar}}"></td>    
+    {{!-- <h5 id ="user-screen_name"><small></small></h5>  --}}
+    <tr><td id="user-name">{{user.first_name}},</td> 
+         <td id="user-screen_name">aka {{user.screen_name}},</td>
+         <td>Age: {{age user.born_on}}</td>
+         <td class="avatar"><img style="object-fit:cover;height:60px;" src="{{user.avatar}}"></td>    
    </tr>
     <button type="submit" id="invite">Invite to Play</button>
     </section>

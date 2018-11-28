@@ -2,6 +2,9 @@
 <html>
     <head>
       <title>Child Life</title>
+      <style>
+          @import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700');
+          </style>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -14,69 +17,87 @@
       <body class="container-fluid">
        <br>
        <h1 id="welcome" class="jumbotron">Welcome to Child Life</h1>
-       
-       <!-- <div id="login-button-div">
-       <a href="#" data-toggle="modal" data-target="#login-modal" id="login-button">Login</a>
-      </div>
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    	  <div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
-				  <form>
-					<input type="text" name="credentials[email]" placeholder="Email">
-					<input type="password" name="credentials[password]" placeholder="Password">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-				  </form>
-					
-				  <div class="login-help">
-					<a href="#">Register</a> - <a href="#">Forgot Password</a>
-				  </div>
-				</div>
-			</div>
-      </div> -->
+      
+      <div id="message" hidden></div>
+
       <div id="forms">
           <form id="sign-up">
             <fieldset>
-              <legend>Sign Up</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
+              <legend id="sign-up-legend">Sign Up</legend>
+              <input type="text" name="credentials[email]" placeholder="Screen Name">
               <input type="password" name="credentials[password]" placeholder="Password">
               <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <select name="credentials[wing]" id="chosen-wing">
+                  <option value="Cardio">Cardio</option>
+                  <option value="Neuro">Neuro</option>
+                  <option value="Ortho">Ortho</option>
+                </select>
               <input type="submit" value="Sign Up">
             </fieldset>
           </form>
+
           <br>
+          
           <form id="sign-in">
             <fieldset>
-              <legend>Sign In</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
+              <legend id="sign-in-legend">Sign In</legend>
+              <input type="text" name="credentials[email]" placeholder="Screen Name">
               <input type="password" name="credentials[password]" placeholder="Password">
               <input type="submit" value="Sign In">
             </fieldset>
           </form>
-          <div id="message" hidden>
-              
-            </div>
+        
              
         <nav id="nav-bar" hidden>
-          <button id="getSpecialist" class="btn btn-block">My Specialist</button>
-          <button id="getResources" class="btn btn-block">Resources</button>
-          <button id="getStory" class="btn btn-block">My Hospital Story</button>
-          <button id="getBuddies" class="btn btn-block">My Hospital Buddies</button>
-          <button id="getOnlineBuddies" class="btn btn-block">Who's Online</button>
+          <div id=buttons>
+          <button id="getSpecialist" class="btn btn-primary btn-lg btn-block">My Specialist</button>
+          <button id="getResources" class="btn btn-primary btn-lg btn-block">Resources</button>
+          <button id="getStory" class="btn btn-primary btn-lg btn-block">My Hospital Story</button>
+          <button id="getBuddies" class="btn btn-primary btn-lg btn-block">My Hospital Buddies</button>
+          <button id="getOnlineBuddies" class="btn btn-primary btn-lg btn-block">Who's Online</button>
+          <button id="editProfile" class="btn btn-primary btn-lg btn-block">Edit My Profile</button>
+        </div>
         </nav>
         <main>
-          <div id="results" class="results" hidden></div>
+            <div id="edit-profile" hidden>
+                <form id="new-avatar">
+                  <fieldset>
+                    <!-- <legend id="new-avatar-legend">New Avatar URL</legend> -->
+                    <input type="text" name="New Avatar" placeholder="Paste New Avatar URL">
+                    <input type="submit" value="Submit">
+                  </fieldset>
+                </form>
+      
+                <br>
+                
+                <form id="new-screen_name">
+                  <fieldset>
+                    <!-- <legend id="new-screen_name-legend">New Screen Name</legend> -->
+                    <input type="text" name="New Screen Name" placeholder="Type New Screen Name Here">
+                    <input type="submit" value="Submit">
+                  </fieldset>
+                </form>
+
+                <br> 
+
+                <form id="change-password">
+                    <fieldset>
+                      <legend></legend>
+                      <input type="password" name="passwords[old]" placeholder="Old Password">
+                      <input type="password" name="passwords[new]" placeholder="New Password">
+                      <input type="submit" value="Change Password">
+                    </fieldset>
+                  </form> 
+              </div>
+          <div id="results" class="results" hidden>
+             
+          </div>
         </main>
+        <br>
         
         <div id="sign-out_change-pw">
-        <form id="change-password" hidden>
-            <fieldset>
-              <legend></legend>
-              <input type="password" name="passwords[old]" placeholder="Old Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
-              <input type="submit" value="Change Password">
-            </fieldset>
-          </form> 
+        
+          <br>
           <form id="sign-out" hidden>
             <fieldset>
               <!-- <legend>Sign Out</legend> -->

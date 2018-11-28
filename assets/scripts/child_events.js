@@ -14,8 +14,28 @@ const onGetSpecialist = () => {
     .then(ui.getSpecialistSuccess)
     .catch(ui.failure)
 }
+const onNewAvatar = (event) => {
+    event.preventDefault()
+    const data = getFormFields(event.target)
+    // document.getElementById('sign-up').hidden = true
+    api.newAvatar(data) 
+    .then(ui.newAvatarSuccess) 
+    .catch(ui.newAvatarFailure)
+}
+
+
+const onNewScreenName = (event) => {
+    event.preventDefault()
+    const data = getFormFields(event.target)
+    // document.getElementById('sign-up').hidden = true
+    api.newScreenName(data) 
+    .then(ui.newScreenNameSuccess) 
+    .catch(ui.newScreenNameFailure)
+}
 
 module.exports = {
     onGetBuddies,
-    onGetSpecialist
+    onGetSpecialist,
+    onNewAvatar,
+    onNewScreenName
 }
