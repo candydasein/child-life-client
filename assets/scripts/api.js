@@ -39,49 +39,56 @@ const getBuddies = function() {
       })
 }
 
-const getSpecialist = function() {
-    console.log("api.getSpecialist ran")
+const getSpecialist = function(data) {
+    console.log("api.getSpecialist ran; store.user.specialist_id is " + store.user.specialist_id)
     return $.ajax({
-        url: config.apiUrl + '/specialists',
+        url: config.apiUrl + '/specialists/' + store.user.specialist_id, /* + HOW TO GET JUST SPECIFIC SPECIALIST*/
+        method: 'GET',
         headers: {
             Authorization: 'Token token=' + store.user.token 
         },
       })
 }
 
-// const newAvatar = function (data) {
-//     return $.ajax({
-//         console.log(data)
-//         url: config.apiUrl + '/patients/' + store.user.id, 
-//         method: 'PATCH',
-//         headers: {
-//             Authorization: 'Token token=' + store.user.token 
-//         },
-//         data: {
-//             patient: {
-//             : {data}
-//          } 
-//         }
-//     })
-// }
+const newAvatar = function (data) {
+    return $.ajax({
+        url: config.apiUrl + '/users/' + store.user.id, 
+        method: 'PATCH',
+        headers: {
+            Authorization: 'Token token=' + store.user.token 
+        },
+        data: data
+    })
+}
 
-// const newScreenName = function (data) {
-//     return $.ajax({
-//         url: config.apiUrl + '/patients/' + store.user.id, 
-//         method: 'PATCH',
-//         headers: {
-//             Authorization: 'Token token=' + store.user.token 
-//         },
-//         data: 
-//     })
-// }
+const newScreenName = function (data) {
+    return $.ajax({
+        url: config.apiUrl + '/users/' + store.user.id, 
+        method: 'PATCH',
+        headers: {
+            Authorization: 'Token token=' + store.user.token 
+        },
+        data: data
+    })
+}
+
+const signOut = function () {
+    return $.ajax({
+        url: config.apiUrl + '/sign-out', 
+        method: 'DELETE',
+        headers: {
+            Authorization: 'Token token=' + store.user.token 
+        } 
+    })
+}
 
 module.exports = {
     getBuddies,
     signUp,
     signIn,
+    signOut,
     changePassword,
     getSpecialist,
-    // newAvatar,
-    // newScreenName
+    newAvatar,
+    newScreenName
 }

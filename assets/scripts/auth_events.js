@@ -32,10 +32,38 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const onSignOut = function (event) {
+    event.preventDefault()
+    api.signOut() 
+    .then(ui.signOutSuccess) 
+    .catch(ui.signOutFailure)
+}
+
+
+const onNewAvatar = function (event) {
+    event.preventDefault()
+    const data = getFormFields(event.target)
+    // document.getElementById('sign-up').hidden = true
+    api.newAvatar(data) 
+    .then(ui.newAvatarSuccess) 
+    .catch(ui.newAvatarFailure)
+}
+
+
+const onNewScreenName = function (event) {
+    event.preventDefault()  
+    const data = getFormFields(event.target)
+    api.newScreenName(data) 
+    .then(ui.newScreenNameSuccess) 
+    .catch(ui.newScreenNameFailure)
+}
+
 module.exports = {
     onSignUp,
     onSignIn,
     // onSignIn,
-    onChangePassword
-    // onSignOut
+    onChangePassword,
+    onSignOut,
+    onNewAvatar,
+    onNewScreenName
 }

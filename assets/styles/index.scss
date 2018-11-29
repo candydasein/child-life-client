@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-$main-background-color: #4b5a68;
+$main-background-color: #1f87e9;
 $secondary-background: #f42727;
 $font-color: #fcfcfc;
 
@@ -14,89 +14,39 @@ body {
   }
   
   div {
-   // border: $font-color 2px solid;
     padding: 10px;
     text-align: center;
   }
 
-  // #sign-in {
-  //   font-size: 18px;
-  // }
-
-//  #login-button {
-//    color: white;
-//    font-size: 24px;
-//    background-color: black;
-
-//  }
-
-//  #login-button-div {
-
-//  }
-  
-//   button {
-//     background-color: $secondary-background;
-//     color: $font-color;
-//   }
 
   #getSpecialist {
     background-color:  #f42727;
     color: $font-color;
-    // text-shadow:
-		// -0.2px -0.2px 0 #000,
-		// 0.2px -0.2px 0 #000,
-		// -0.2px 0.2px 0 #000,
-		// 0.2px 0.2px 0 #000;
   }
 
   #getResources {
     background-color:  #f49127;
     color: $font-color;
-    // text-shadow:
-    // -0.2px -0.2px 0 #000,
-    // 0.2px -0.2px 0 #000,
-    // -0.2px 0.2px 0 #000,
-    // 0.2px 0.2px 0 #000;
   }
 
   #getStory {
     background-color: gold;
     color: $font-color;
-    // text-shadow:
-    // -0.2px -0.2px 0 #000,
-    // 0.2px -0.2px 0 #000,
-    // -0.2px 0.2px 0 #000,
-    // 0.2px 0.2px 0 #000;
   }
 
   #getBuddies {
     background-color:  #2dc220;
     color: $font-color;
-    // text-shadow:
-    // -0.2px -0.2px 0 #000,
-    // 0.2px -0.2px 0 #000,
-    // -0.2px 0.2px 0 #000,
-    // 0.2px 0.2px 0 #000;
   }
 
   #getOnlineBuddies {
     background-color:  #2772f4;
     color: $font-color;
-    // text-shadow:
-    // -0.2px -0.2px 0 #000,
-    // 0.2px -0.2px 0 #000,
-    // -0.2px 0.2px 0 #000,
-    // 0.2px 0.2px 0 #000;
   }
 
   #editProfile {
     background-color:  #4f11df;
     color: $font-color;
-    // text-shadow:
-    // -0.2px -0.2px 0 #000,
-    // 0.2px -0.2px 0 #000,
-    // -0.2px 0.2px 0 #000,
-    // 0.2px 0.2px 0 #000;
   }
 
   #welcome {
@@ -106,11 +56,6 @@ body {
       font-weight: 700;
       font-size: 60px;
       border-radius: 8px;
-    //   text-shadow:
-		// -1px -1px 0 rgb(165, 161, 161),
-		// 1px -1px 0 rgb(165, 161, 161),
-		// -1px 1px 0 rgb(165, 161, 161),
-		// 1px 1px 0 rgb(165, 161, 161);
       }
 
 nav {
@@ -124,18 +69,14 @@ button:hover {
 }
 
 #results {
-  // display: flex;
-  // flex-wrap: wrap;
   background-color: rgba(3, 101, 10, 0.543);
 }
 
 .buddies {
-  // display: inline-block;
   border: rgb(255, 255, 255) 2px solid;
   color: #ffffff;
   font-weight: bold;
   position: relative;
-  // box-sizing: content-box;
 }
 
 #invite {
@@ -183,6 +124,11 @@ label {
   background-color: rgba(97, 83, 83, 0.495);
 }
 
+#changepw-message {
+  color: white;
+  font-size: 18px; 
+}
+
 #chosen-wing {
   width: 200px;
   height: 50%;
@@ -193,6 +139,3 @@ input {
   border-radius: 8px;
 }
 
-// #sign-in-legend {
-//   background-color: rgba(97, 83, 83, 0.345);
-// }

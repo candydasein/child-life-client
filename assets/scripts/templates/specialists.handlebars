@@ -1,19 +1,17 @@
-{{#each specialists as |specialist|}}
-  {{log specialist}}
+{{!-- {{#each specialists as |specialist|}}
+  {{log specialist}} --}}
 
   <div class="container">
-    <section data-id="{{specialist.id}}" class="specialists">
+    <section data-id="{{specialists.id}}" class="specialists">
    
-    {{!-- <h5 id ="patient-screen_name"><small></small></h5>  --}}
     <div class="row">
-         <div class="col-sm" style="font-size:40px;vertical-align:-50%">Your Child Life Specialist in the {{specialist.wing}} Wing is {{specialist.first_name}}</div>
-         {{!-- <div class="col-sm">{{specialist.last_name}}</div> --}}
+         <div class="col-sm" style="font-size:40px;vertical-align:-50%">Your Child Life Specialist in the {{specialists.wing}} Wing is {{specialists.first_name}}</div>
          <br>
-         <div class="col-sm"><img style="object-fit:cover;height:200px;border-radius:40px" src="{{specialist.picture}}"></div>
-    <div class="col-sm"><button style="margin-top:6px;vertical-align:-50%" type="submit" id="contact-specialist">Contact {{specialist.first_name}}</button></div>
+         <div class="col-sm"><img style="object-fit:cover;height:200px;border-radius:40px" src="{{specialists.picture}}"></div>
+    <div class="col-sm"><button style="margin-top:6px;vertical-align:-50%" type="submit" id="contact-specialist">Contact {{specialists.first_name}}</button></div>
     </div>
     <br>
     
     </section>
   </div>
-{{/each}}
+{{!-- {{/each}} --}}

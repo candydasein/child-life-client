@@ -59,11 +59,10 @@
         </div>
         </nav>
         <main>
-            <div id="edit-profile" hidden>
+            <div id="profile-editor" hidden>
                 <form id="new-avatar">
                   <fieldset>
-                    <!-- <legend id="new-avatar-legend">New Avatar URL</legend> -->
-                    <input type="text" name="New Avatar" placeholder="Paste New Avatar URL">
+                    <input type="text" name="user[avatar]" placeholder="Paste New Avatar URL">
                     <input type="submit" value="Submit">
                   </fieldset>
                 </form>
@@ -72,8 +71,7 @@
                 
                 <form id="new-screen_name">
                   <fieldset>
-                    <!-- <legend id="new-screen_name-legend">New Screen Name</legend> -->
-                    <input type="text" name="New Screen Name" placeholder="Type New Screen Name Here">
+                    <input type="text" name="user[email]" placeholder="Type New Screen Name Here">
                     <input type="submit" value="Submit">
                   </fieldset>
                 </form>
@@ -96,11 +94,10 @@
         <br>
         
         <div id="sign-out_change-pw">
-        
+            <div id="changepw-message" hidden></div>
           <br>
           <form id="sign-out" hidden>
             <fieldset>
-              <!-- <legend>Sign Out</legend> -->
               <input type="submit" value="Sign Out">
             </fieldset>
           </form> 

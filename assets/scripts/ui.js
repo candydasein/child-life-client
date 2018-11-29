@@ -7,8 +7,11 @@ const store = require('./store.js')
 const signUpSuccess = function(data) {
     // $('#message').text('Welcome!')
     // $('#message').addClass('success')  
-    $('#sign-up').hide()  
+    document.getElementById('sign-up').hidden = true
+    //$('#sign-up').hide()  
     console.log('signUpSuccess ran. Data is :', data)
+    document.getElementById('sign-up').reset()
+    document.getElementById('sign-in').reset()
 }
 
 const signUpFailure = function (error) {
@@ -19,13 +22,17 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (data) {
     store.user = data.user
-    $('#sign-up').hide()  
-    $('#sign-in').hide()
-    $('#message').hide()
+    document.getElementById('sign-up').hidden = true
+    //$('#sign-up').hide()  
+    document.getElementById('sign-in').hidden = true
+    //$('#sign-in').hide()
+    document.getElementById('message').hidden = true
     //$('#message').hide()
     document.getElementById('change-password').hidden = false
     document.getElementById('sign-out').hidden = false
     document.getElementById('nav-bar').hidden = false
+    document.getElementById('sign-up').reset()
+    document.getElementById('sign-in').reset()
     console.log('signInSuccess ran. Data is :', data)
 }
 
@@ -35,16 +42,30 @@ const signInFailure = function (error) {
     console.log('signInFailure ran. Error is :', error)
 }
 
+const signOutSuccess = function (data) {
+    $('#message').text('Goodbye.')
+    document.getElementById('nav-bar').hidden = true
+    document.getElementById('change-password').hidden = true
+    document.getElementById('nav-bar').hidden = true
+    document.getElementById('sign-up').hidden = false
+    document.getElementById('sign-in').hidden = false
+    document.getElementById('sign-out').hidden = true
+    document.getElementById('sign-up').reset()
+    document.getElementById('sign-in').reset()
+    store.user = null
+    console.log('signOutSuccess ran. Data is', data)
+}
+
 const changePasswordSuccess = function (data) {
     document.getElementById('message').hidden = false
-    $('#message').text('Password successfully changed.')
+    $('#changepw-message').text('Password successfully changed.')
     //$('#message').addClass('success')    
     console.log('changePasswordSuccess ran. Data is', data)
     document.getElementById('change-password').reset()
 }
 
 const changePasswordFailure = function (error) {
-    $('#message').text('Nope. Did not work.')
+    $('#changepw-message').text('Sorry, we were unable to change your password. Please try again.')
     $('#message').addClass('failure')
     console.log('changePassword ran. Error is :', error)
 }
@@ -73,79 +94,29 @@ const getBuddiesSuccess = function(data) {
 }
 
 const getSpecialistSuccess = function(data) {
-    console.log("ui.getSpecialistsSuccess ran")
+    console.log("ui.getSpecialistSuccess ran")
     console.log(data)
-    const showSpecialistsHtml = showSpecialistsTemplate({ specialists: data.specialists })
-    // const hideSpecialists = function() {
-    //     $('#results').hide() 
-    // }
-    // const showBuddies = function() {
-    //     $('#results').show() 
-    // }
- 
-    //$('#buddies').show()
+    const showSpecialistsHtml = showSpecialistsTemplate({ specialists: data.specialist })
     document.getElementById('results').hidden = false
     $('.results').html(showSpecialistsHtml)
     $('#getSpecialist').click(function(){
         $('.results').toggle();
     })
-   
-    // $('#getSpecialist').on('click', () => hideSpecialists())
-    // $('#getBuddies').on('click', () => showBuddies())
-
-  
-    //app.clickEvents()
 }
 
-// const newAvatarSuccess = function(data) {
-//     console.log("ui.newAvatarSuccess ran")
-//     console.log(data)
-//     const showNewAvatarHtml = showNewAvatarTemplate({ new_avatar: data.avatar })
-//     // const hideSpecialists = function() {
-//     //     $('#results').hide() 
-//     // }
-//     // const showBuddies = function() {
-//     //     $('#results').show() 
-//     // }
- 
-//     //$('#buddies').show()
-//     document.getElementById('results').hidden = false
-//     $('.results').html(showNewAvatarHtml)
-//     $('#editProfile').click(function(){
-//         $('.results').toggle();
-//     })
-   
-//     // $('#getSpecialist').on('click', () => hideSpecialists())
-//     // $('#getBuddies').on('click', () => showBuddies())
 
-  
-//     //app.clickEvents()
-// }
+const newScreenNameSuccess = function (data) {
+    document.getElementById('changepw-message').hidden = false
+    $('#changepw-message').text('Screen Name changed successfully.')  
+    document.getElementById('new-screen_name').reset()
+}
 
-// const newScreenNameSuccess = function(data) {
-//     console.log("ui.getSpecialistsSuccess ran")
-//     console.log(data)
-//     const showSpecialistsHtml = showSpecialistsTemplate({ specialists: data.specialists })
-//     // const hideSpecialists = function() {
-//     //     $('#results').hide() 
-//     // }
-//     // const showBuddies = function() {
-//     //     $('#results').show() 
-//     // }
- 
-//     //$('#buddies').show()
-//     document.getElementById('results').hidden = false
-//     $('.results').html(showSpecialistsHtml)
-//     $('#editProfile').click(function(){
-//         $('.results').toggle();
-//     })
-   
-//     // $('#getSpecialist').on('click', () => hideSpecialists())
-//     // $('#getBuddies').on('click', () => showBuddies())
+const newAvatarSuccess = function (data) {
+    document.getElementById('changepw-message').hidden = false
+    $('#changepw-message').text('Avatar changed successfully.')  
+    document.getElementById('new-avatar').reset()
+}
 
-  
-//     //app.clickEvents()
-// }
 
 module.exports = {
     getBuddiesSuccess,
@@ -154,8 +125,9 @@ module.exports = {
     signUpFailure,
     signInSuccess,
     signInFailure,
+    signOutSuccess,
     changePasswordSuccess,
-    changePasswordFailure
-    // newAvatarSuccess,
-    // newScreenNameSuccess
+    changePasswordFailure,
+    newScreenNameSuccess,
+    newAvatarSuccess
 }
