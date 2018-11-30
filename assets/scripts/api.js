@@ -40,7 +40,7 @@ const getBuddies = function() {
 }
 
 const getSpecialist = function(data) {
-    console.log("api.getSpecialist ran; store.user.specialist_id is " + store.user.specialist_id)
+    console.log(store.user.specialist_id)
     return $.ajax({
         url: config.apiUrl + '/specialists/' + store.user.specialist_id, /* + HOW TO GET JUST SPECIFIC SPECIALIST*/
         method: 'GET',

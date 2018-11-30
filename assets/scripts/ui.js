@@ -22,6 +22,7 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (data) {
     store.user = data.user
+    console.log(store.user)
     document.getElementById('sign-up').hidden = true
     //$('#sign-up').hide()  
     document.getElementById('sign-in').hidden = true
