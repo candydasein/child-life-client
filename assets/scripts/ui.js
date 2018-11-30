@@ -57,6 +57,8 @@ const signOutSuccess = function (data) {
     document.getElementById('sign-out').hidden = true
     document.getElementById('results').hidden = true
     document.getElementById('profile-editor').hidden = true
+    document.getElementById('new-screen_name').hidden = true
+    document.getElementById('new-avatar').hidden = true
     document.getElementById('sign-up').reset()
     document.getElementById('sign-in').reset()
     store.user = null
