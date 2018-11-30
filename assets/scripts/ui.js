@@ -18,6 +18,8 @@ const signUpFailure = function (error) {
     document.getElementById('message').hidden = false
     $('#message').text('Sorry, we were unable to sign you up. Please try again.')
     console.log('signUpFailure ran. Error is :', error)
+    document.getElementById('sign-up').reset()
+    document.getElementById('sign-in').reset()
 }
 
 const signInSuccess = function (data) {
@@ -41,6 +43,8 @@ const signInFailure = function (error) {
     document.getElementById('message').hidden = false
     $('#message').text('Sorry, we were unable to sign you in. Please try again.')
     console.log('signInFailure ran. Error is :', error)
+    document.getElementById('sign-up').reset()
+    document.getElementById('sign-in').reset()
 }
 
 const signOutSuccess = function (data) {
