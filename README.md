@@ -1,5 +1,5 @@
 
-#child-life
+# Child Life, v. 1
 
 Child Life is an app that is designed to foster a sense of community among children during hospital stays, and is meant to interface with the office of the hispital's Child Life Specialists in doing so.
 
@@ -10,7 +10,7 @@ Child Life is intended to address this by providing a sense of virtual community
 The idea for this project came from my son's hospital experience after cardiac surgery at Boston Children's Hospital in 2017. Although we had an excellent overall experience, I could tell that he was curious about the other kids. Luckily he had his brother and some other visitors, but the dominant feeling was that it is lonely to be in a hospital. Even when they are sick, kids will always be kids and will always want to be with other kids.
 The app itself uses HTML, CSS, JavaScript, jQuery, Handlebars, and AJAX. The child/user interacts with an custom API that allows them to connect with other users (right now in a primitive way, but in more nuanced, enjoyable ways in future incarnations).
 
-#User stories:
+# User stories:
 
 (Future hopes are in parentheses.)
 
@@ -35,6 +35,7 @@ I also enjoyed creating a Handlebars helper file which uses a JavaScript functio
 
 I am very excited to continue working on this project. I think it has meaning and real world value.
 
+# Links
 The deployed app can be found here: https://candydasein.github.io/child-life-client/
 The back end repo for this project can be found here: https://github.com/candydasein/child-life
 The server itself can be found here: https://lit-harbor-73746.herokuapp.com/
