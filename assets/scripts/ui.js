@@ -13,7 +13,6 @@ const signUpSuccess = function(data) {
 const signUpFailure = function (error) {
     document.getElementById('message').hidden = false
     $('#message').text('Sorry, we were unable to sign you up. Please try again.')
-    console.log('signUpFailure ran. Error is :', error)
     document.getElementById('sign-up').reset()
     document.getElementById('sign-in').reset()
 }
@@ -35,7 +34,6 @@ const signInSuccess = function (data) {
 const signInFailure = function (error) {
     document.getElementById('message').hidden = false
     $('#message').text('Sorry, we were unable to sign you in. Please try again.')
-    console.log('signInFailure ran. Error is :', error)
     document.getElementById('sign-up').reset()
     document.getElementById('sign-in').reset()
 }
@@ -55,25 +53,19 @@ const signOutSuccess = function (data) {
     document.getElementById('sign-up').reset()
     document.getElementById('sign-in').reset()
     store.user = null
-    console.log('signOutSuccess ran. Data is', data)
 }
 
 const changePasswordSuccess = function (data) {
     document.getElementById('message').hidden = false
     $('#changepw-message').text('Password successfully changed.')
-    //$('#message').addClass('success')    
-    console.log('changePasswordSuccess ran. Data is', data)
     document.getElementById('change-password').reset()
 }
 
 const changePasswordFailure = function (error) {
     $('#changepw-message').text('Sorry, we were unable to change your password. Please try again.')
-    $('#message').addClass('failure')
-    console.log('changePassword ran. Error is :', error)
 }
 
 const getBuddiesSuccess = function(data) {
-    console.log(data)
     const showBuddiesHtml = showBuddiesTemplate({ users: data.users }) 
     document.getElementById('results').hidden = false
     $('.results').html(showBuddiesHtml)
@@ -83,8 +75,6 @@ const getBuddiesSuccess = function(data) {
 }
 
 const getSpecialistSuccess = function(data) {
-    console.log("ui.getSpecialistSuccess ran")
-    console.log(data)
     const showSpecialistsHtml = showSpecialistsTemplate({ specialists: data.specialist })
     document.getElementById('results').hidden = false
     $('.results').html(showSpecialistsHtml)
@@ -121,13 +111,8 @@ const deleteProfileSuccess= function () {
         document.getElementById('new-avatar').hidden = true
         
         document.getElementById('fireworks').hidden = false
-   // $('#getting-out').hide()
     $('#fireworks').html('<img src="https://media.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif">')
-   // $('#goodbye-message').on('click', resetPage())
 }
-
-//const deleteProfileFailure
-
 
 module.exports = {
     getBuddiesSuccess,
@@ -142,5 +127,4 @@ module.exports = {
     newScreenNameSuccess,
     newAvatarSuccess,
     deleteProfileSuccess
-    //deleteProfileFailure
 }
