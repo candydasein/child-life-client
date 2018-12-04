@@ -35,5 +35,7 @@ I also enjoyed creating a Handlebars helper file which uses a JavaScript functio
 
 I am very excited to continue working on this project. I think it has meaning and real world value.
 
+The deployed app can be found here: https://candydasein.github.io/child-life-client/
 The back end repo for this project can be found here: https://github.com/candydasein/child-life
+The server itself can be found here: https://lit-harbor-73746.herokuapp.com/
 
