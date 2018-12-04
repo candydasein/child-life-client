@@ -82,6 +82,16 @@ const signOut = function () {
     })
 }
 
+const deleteProfile = function () {
+    return $.ajax({
+        url: config.apiUrl + '/users/' + store.user.id, 
+        method: 'DELETE',
+        headers: {
+            Authorization: 'Token token=' + store.user.token 
+        } 
+    })
+}
+
 module.exports = {
     getBuddies,
     signUp,
@@ -90,5 +100,6 @@ module.exports = {
     changePassword,
     getSpecialist,
     newAvatar,
-    newScreenName
+    newScreenName,
+    deleteProfile
 }

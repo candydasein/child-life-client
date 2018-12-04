@@ -109,6 +109,15 @@ button:hover {
   font-weight: 600;
 }
 
+#getting-out {
+  background-color: rgba(97, 83, 83, 0.345);
+}
+
+#getting-out-button {
+  background-color: rgb(250, 122, 210);
+  animation: blinker .3s cubic-bezier(1, 0, .1, 1) infinite alternate;
+}
+
 #buttons {
   font-size: 24px;
 }
@@ -138,4 +147,6 @@ label {
 input {
   border-radius: 8px;
 }
+
+@keyframes blinker { to { opacity: .5; } }
 

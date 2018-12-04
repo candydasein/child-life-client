@@ -22,4 +22,5 @@ $(() => {
   $('#getBuddies').on('click', () => childEvents.onGetBuddies())
   $('#getSpecialist').on('click', () => childEvents.onGetSpecialist())
   $('#editProfile').on('click', () => onEditProfile())
+  $('#getting-out-button').on('click', () => authEvents.onDeleteProfile())
 })

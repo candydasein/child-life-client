@@ -58,12 +58,18 @@ const onNewScreenName = function (event) {
     .catch(ui.newScreenNameFailure)
 }
 
+const onDeleteProfile = function () {
+    api.deleteProfile() 
+    .then(ui.deleteProfileSuccess) 
+    .catch(ui.deleteProfileFailure)
+}
+
 module.exports = {
     onSignUp,
     onSignIn,
-    // onSignIn,
     onChangePassword,
     onSignOut,
     onNewAvatar,
-    onNewScreenName
+    onNewScreenName,
+    onDeleteProfile
 }
