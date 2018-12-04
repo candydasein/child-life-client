@@ -42,3 +42,4 @@ The back end repo for this project can be found here: https://github.com/candyd
 
 The server itself can be found here: https://lit-harbor-73746.herokuapp.com/
 
+My initial wireframe can be found here: https://ibb.co/JmJS0kZ
