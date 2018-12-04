@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Child Life</title>
+      <style>
+          @import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700');
+          </style>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>    
+      <body class="container-fluid">
+       <br>
+       <div id="fireworks" hidden></div>
+       <h1 id="welcome" class="jumbotron">Welcome to Child Life</h1>
+      
+      <div id="message" hidden></div>
+
+      <div id="forms">
+          <form id="sign-up">
+            <fieldset>
+              <legend id="sign-up-legend">Sign Up</legend>
+              <input type="text" name="credentials[email]" placeholder="Screen Name">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <select name="credentials[wing]" id="chosen-wing">
+                  <option value="Cardio">Cardio</option>
+                  <option value="Neuro">Neuro</option>
+                  <option value="Ortho">Ortho</option>
+                </select>
+              <input type="submit" value="Sign Up">
+            </fieldset>
+          </form>
+
+          <br>
+          
+          <form id="sign-in">
+            <fieldset>
+              <legend id="sign-in-legend">Sign In</legend>
+              <input type="text" name="credentials[email]" placeholder="Screen Name">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" value="Sign In">
+            </fieldset>
+          </form>
+        
+             
+        <nav id="nav-bar" hidden>
+          <div id=buttons>
+          <button id="getSpecialist" class="btn btn-primary btn-lg btn-block">My Specialist</button>
+          <button id="getResources" class="btn btn-primary btn-lg btn-block">Resources</button>
+          <button id="getStory" class="btn btn-primary btn-lg btn-block">My Hospital Story</button>
+          <button id="getBuddies" class="btn btn-primary btn-lg btn-block">My Hospital Buddies</button>
+          <button id="getOnlineBuddies" class="btn btn-primary btn-lg btn-block">Who's Online</button>
+          <button id="editProfile" class="btn btn-primary btn-lg btn-block">Edit My Profile</button>
+        </div>
+        </nav>
+        <main>
+            <div id="profile-editor" hidden>
+                <form id="new-avatar">
+                  <fieldset>
+                    <input type="text" name="user[avatar]" placeholder="Paste New Avatar URL">
+                    <input type="submit" value="Submit">
+                  </fieldset>
+                </form>
+      
+                <br>
+                
+                <form id="new-screen_name">
+                  <fieldset>
+                    <input type="text" name="user[email]" placeholder="Type New Screen Name Here">
+                    <input type="submit" value="Submit">
+                  </fieldset>
+                </form>
+
+                <br> 
+
+                <form id="change-password">
+                    <fieldset>
+                      <legend></legend>
+                      <input type="password" name="passwords[old]" placeholder="Old Password">
+                      <input type="password" name="passwords[new]" placeholder="New Password">
+                      <input type="submit" value="Change Password">
+                    </fieldset>
+                  </form> 
+
+                  <br>
+                  <div id="getting-out">
+                    <h2>Yay! You are going home! Congratulations and great work! Click below to delete your account. Be careful! This will be permanent!</h2>
+                    <button id="getting-out-button" class="btn btn-primary btn-lg btn-block">I'm Getting Out of the Hospital!</button>
+                  </div>
+                  <div id="goodbye-message"></div>
+              </div>
+          <div id="results" class="results" hidden>
+             
+          </div>
+        </main>
+        <br>
+        
+        <div id="sign-out_change-pw">
+            <div id="changepw-message" hidden></div>
+          <br>
+          <form id="sign-out" hidden>
+            <fieldset>
+              <input type="submit" value="Sign Out">
+            </fieldset>
+          </form> 
+        </div>
+      </body>
+    </body>
+</html>
+
+
+ 
