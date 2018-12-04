@@ -1,113 +1,39 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# browser-template
+#child-life
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+Child Life is an app that is designed to foster a sense of community among children during hospital stays, and is meant to interface with the office of the hispital's Child Life Specialists in doing so.
 
-## Installation
+While hospitals go to great lengths to help children feel like children while they are staying in what can feel like an inhospitable, frightening place. However, given the limitations of procedure and treatment schedules, mobility, and suppressed or endangered immunity among patients, there is only so much the Child Life Specialists can do to allow their patients to be with other children. This can be a very lonely experience.
 
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+Child Life is intended to address this by providing a sense of virtual community. In its current state, it allows children to create a unique screen name, to choose an avatar, and to see the names, ages, screen names, and avatars of other children using the app. It also allows them to find out who their individual child life specialist is. In future incarnations, the app will facilitate deeper connections with other children in the hospital, including chat, game play, group drawing, and other activities. It will also allow children to see who is online at any given time. I can imagine a scenario where it also interfaces with non-sensitive medical information in order to help with treatment scheduling, reminders, tips, etc. -- anything that will make that side of the hospital experience more bearable and more fun.
 
-## Structure
+The idea for this project came from my son's hospital experience after cardiac surgery at Boston Children's Hospital in 2017. Although we had an excellent overall experience, I could tell that he was curious about the other kids. Luckily he had his brother and some other visitors, but the dominant feeling was that it is lonely to be in a hospital. Even when they are sick, kids will always be kids and will always want to be with other kids.
+The app itself uses HTML, CSS, JavaScript, jQuery, Handlebars, and AJAX. The child/user interacts with an custom API that allows them to connect with other users (right now in a primitive way, but in more nuanced, enjoyable ways in future incarnations).
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+#User stories:
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+(Future hopes are in parentheses.)
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+As a child/parent/user, I should be able to know who my child life specialist is (and communicate with them about needs and with resource requests)
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+As a child/parent/user, I should be able to know who the other children are who have opted into Child Life (by Screenname), whether they are online, and where their rooms are (and interact with them in some way, through collaborative drawing projects, through chat/emojis, through games, through a local social network).
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+As a child/parent/user, I should be able to know what hospital resources are available to me, including entertainment, wellness, community events in real and virtual space, local food delivery options, a hospital map a child can draw on, various forms of information and education about my child's condition, (and I should be able to request them and use some of them online).
 
-## Adding Images
+As a child life specialist, I should be able to know the necessary information about the children and families I serve such as name, DOB, condition, sex, family members, room #, special needs and requests, length of stay, primary doc, nurse, treatment and procedure schedules, etc. (and I should be able to communicate back to the children/families with audio, video, text, etc.)
 
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
+As a user, I should be able to securely sign in with a user name and password (as either a child parent, or child life specialist), change my password, and sign out.
 
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
+One feature of this app that I enjoyed implementing was to assign each user to a specific child life specialist upon their signing up. Each child life specialist in my current model is assigned one and only one wing, and the entirety of that wing. Specialists therefore have many users and one wing, while users have one wing and one specialist. When a new user signs up, in order to do so successfully they must choose a wing from a drop-down menu. This is then entered as a credential (like their screen name or password), and is then tied to their specialist through a piece of Ruby code I included in the UsersController on the server side:
 
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
+User.all.each do |user|
+      wing = user.wing
+      specialist_id = Specialist.where(wing: wing)[0].id
+      user.update(specialist_id: specialist_id)
 
-## Adding Fonts
+I also enjoyed creating a Handlebars helper file which uses a JavaScript function to convert users' DOB into their current age.
 
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
+I am very excited to continue working on this project. I think it has meaning and real world value.
 
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
+The back end repo for this project can be found here: https://github.com/candydasein/child-life
 
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
